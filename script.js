@@ -3,7 +3,6 @@ const taskList = document.getElementById('task-list');
 const addtaskbtn = document.getElementById('addtaskbtn');
 const cache = [];
 
-
 // Check Input
 function checkInput() {
     return taskInput.value.trim();
@@ -48,10 +47,17 @@ function enterTaskCreate(event) {
     }
 }
 
-function resetData(){
-    cache=[];
-    displaySavedData();
+//Reset Data
+function resetData() {
+    // t();
+    const saveData = localStorage.getItem('saveData');
+    const savedDataElement = document.getElementById('savedData');
+    if (saveData) {
+        savedDataElement.textContent = 'Nothing to do yet.';
+    }
 }
+
+//Save Data
 function saveData() {
     //Save the Input Task to localstorage
     localStorage.setItem('saveData', cache);
@@ -61,6 +67,7 @@ function saveData() {
     console.log(cache);
 }
 
+//Display Save Data
 function displaySavedData() {
     // console.log("displaySavedData");
     const saveData = localStorage.getItem('saveData');
@@ -72,20 +79,17 @@ function displaySavedData() {
     }
 }
 
-//Display saved Data
+//Load Display Save Data
 window.onload = displaySavedData;
-
-
-
-
 
 // Event Listener Click & Enter & Save
 addtaskbtn.addEventListener('click', clickTaskCreate);
 taskInput.addEventListener('keypress', enterTaskCreate);
 saveDataBtn.addEventListener('click', saveData);
+resetDataBtn.addEventListener('click', resetData);
 
-// function Test() {
-//     console.log("Got It!");
-// }
+function t() {
+    console.log("Got It!");
+}
 
 
