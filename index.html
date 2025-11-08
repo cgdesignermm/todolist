@@ -17,14 +17,19 @@
 <body>
     <h1><i>Welcome!</i></h1>
     <div id="todoInput">
-        <input type="text" id="new-task" placeholder="Add a new task..." maxlength="20">
+        <input type="text" id="newTask" placeholder="Add a new task..." maxlength="20">
         <button id="addtaskbtn">Add Task</button>
     </div>
     <div id="list-box">
         <ol id="task-list">
         </ol>
     </div>
-    <script src="script.js"></script>
+    <div id="saveArea">
+        <button id="saveDataBtn">SAVE DATA</button>
+        <!-- <button onClick="resetData">Reset</button> -->
+        <li id="savedData"></li>
+    </div>
+        <script src="script.js"></script>
 </body>
 
 </html>
