@@ -104,8 +104,7 @@ li {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-li,
-text {
+li {
     color: #30302a;
     display: flex;
     justify-content: space-between;
@@ -114,22 +113,31 @@ text {
     cursor: pointer;
 }
 
+li span {
+    flex: 1;
+    padding-right: 10px;
+}
+
 li:hover {
     color: #143e7c;
 }
 
-deleteButton {
-    padding: 10px;
+.delete-btn {
+    padding: 5px 15px;
+    width: auto;
     min-width: 80px;
+    max-width: 100px;
+    height: 35px;
+    font-size: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50px;
     background: #cb3f23;
     color: white;
-    cursor: pointer
+    cursor: pointer;
 }
 
-deleteButton:hover {
+.delete-btn:hover {
     background: #822e14;
 }
